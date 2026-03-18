@@ -1,0 +1,560 @@
+/*
+Resetting spacing and trying to always maintain the same size of the box.
+Important in agency sites to provide custom interiors and third-party apparatuses.
+do not interrupt the flow of the containers.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+Colors used in the site in a consistent fashion.
+Trust, reliability, and are embodied in a professional blue palette.
+technological authority ideal in case of B2B web development company.
+*/
+:root {
+    --blue-1: #0a58ca;
+    --blue-2: #0d6efd;
+    --blue-3: #64b5f6;
+    --blue-4: #e9f5ff;
+    --text-dark: #05203a;
+}
+
+/*
+The scrolling is smooth and easier to go through the sections.
+Improves UX of potential clients who switch between Services, Portfolio, etc.
+and "Contact Us" sections.
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+Global page style.
+The use of Inter gives it a contemporary, sleek and very readable design.
+typical of the high-end SaaS and tech agency interfaces.
+*/
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/*
+Staffy-looking navigation bar that is always present as one scrolls.
+Makes the call-to-action, either Get a Quote or Hire Us always there.
+available when the client goes through the business value proposition.
+*/
+.navbar {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/*
+Container is used to ensure that the content on the navbar is centred and spaced properly.
+Unifies the horizontal centering of the ultra-wide monitors in use.
+by stakeholders on enterprise level.
+*/
+.nav-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*
+Brand visibility logo style.
+The brand name dictates the business name that forms the cornerstone of the business.
+obviously in the upper-left visual priority zone.
+*/
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/*
+Horizontal links of navigation.
+Divides the hierarchy of the site into Services, Case Studies, and About.
+a well-known, accessible design.
+*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+/*
+The styling of a basic link with a hover underline effect.
+Dynamic feedback which demonstrates that the site is of high-performance, and
+attention-to-detail oriented.
+*/
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+/*
+When hovering, underline animation is applied.
+Minor things that hint at the current frontend functionality.
+to a prospective client.
+*/
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue-3);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/*
+Buttons inside the navbar.
+Placing primary conversions in strategic positions e.g. Client Portal.
+or "Consultation" links.
+*/
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/*
+Filled in border in hovering transparent buttons.
+Some kind of "Ghost Button" design that can achieve a secondary action and still not.
+diluting the call-to-action of the main hero.
+*/
+.nav-buttons button {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid var(--blue-3);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-buttons button:hover {
+    background: var(--blue-3);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100,181,246,0.4);
+}
+
+/*
+Banner of main hero with text in the centre.
+The first impression: this aims at making an instant declaration of the business.
+unique selling point (e.g., "We Build Digital Experiences").
+*/
+.hero {
+    background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+    padding: 80px 40px;
+    min-height: 400px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+Dark overlay increases the contrast of the text in the hero section.
+Necessary to superimpose text on high-resolution project images or
+code-based abstract backgrounds.
+*/
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(13,110,253,0.75);
+}
+
+/*
+Hero text position is kept above overlay.
+Deals with the stack of Z-index so as to keep the core 100% legible.
+business messaging.
+*/
+.hero-content {
+    position: relative;
+    max-width: 800px;
+}
+
+/*
+Main hero heading.
+Bold typography that aims to attract and minimize the number of bounces.
+between mobile and desktop users.
+*/
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/*
+Going under the hero heading.
+Provides more detail on the headline, like Specializing in React, Node, and.
+Complete Startup Solutions.
+*/
+.hero-subtitle {
+    margin-top: 15px;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/*
+Bilbity on general page descriptions.
+A special section to define the philosophy, mission and of the agency.
+methodology (e.g., Agile or Waterfall).
+*/
+.description {
+    background: #fff;
+    padding: 80px 40px;
+}
+
+.description-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/*
+Heading of the part with a blue underline.
+To steer the eye of the reader, visual anchors have been used.
+With Us" narrative.
+*/
+.description h2 {
+    font-size: 36px;
+    color: var(--blue-2);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid var(--blue-1);
+}
+
+/*
+Heading style of readable text blocks.
+Long-term structured to describe complex development processes.
+to non-technical clients.
+*/
+.description p {
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #555;
+}
+
+/*
+Opportunities area that has a light background.
+Focuses on the screen "Career" or "Collaboration" paths, displaying that the agency
+is expanding and on the hunt after talent.
+*/
+.opportunities {
+    background: #f0f5fb;
+    padding: 80px 40px;
+}
+
+.opportunities-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/*
+Heading in the middle, with ornamental underline.
+Make break in page flow formal to become partners.
+opportunities.
+*/
+.opportunities h2 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--blue-2);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.opportunities h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: var(--blue-1);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*
+Opportunity cards grid.
+Presents multiple positions (e.g. Frontend Dev, UX Designer) effectively.
+is not obstructive of the vertical space.
+*/
+.opportunity-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/*
+Individual card styling.
+Summary or package job descriptions or service levels into a set,
+organized modules.
+*/
+.opp-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.opp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(13,110,253,0.18);
+}
+
+.opp-card h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+/*
+Centered text call to action section.
+High conversion Closing section meant to convert a passing visitor.
+into a lead having seen the value.
+*/
+.cta-section {
+    background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+    padding: 80px 40px;
+    text-align: center;
+    color: #fff;
+}
+
+/*
+CTA button in fashionable style.
+Decision Button--high, bright and contrasting to push the buttons.
+optimal clicks to the contact form.
+*/
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--blue-3);
+    color: var(--text-dark);
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #9ecbff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13,110,253,0.25);
+}
+
+/*
+Team profiles section.
+Makes the agency more human with the displaying of the developers and designers.
+behind the code.
+*/
+.team-profiles {
+    background: #fff;
+    padding: 80px 40px;
+}
+
+.profiles-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/*
+Profile card with accent to the left.
+There is a professional touch that adds structure to individual bios, highlighting.
+proficiency such as Lead Architect or Project Manager.
+*/
+.profile-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.profile-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/*
+Courses section.
+Establishes the business as an expert in the industry by providing.
+in house training or outward facing dev workshops.
+*/
+.courses-section {
+    background: #fff;
+    padding: 80px 40px;
+}
+
+.courses-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/*
+Underline heading of courses.
+Marks out the education resources or documentation.
+*/
+.courses-container h2 {
+    font-size: 28px;
+    color: #667eea;
+    border-bottom: 2px solid #0860e4;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+
+/*
+Grid layout for course cards.
+Shows the training on the tech stack, e.g. the training on CSS Grid mastery.
+or "Secure API Integration."
+*/
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/*
+Course card styling.
+Offers a card-based, clean interface where one can easily browse.
+learning modules.
+*/
+.course-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(102,126,234,0.2);
+}
+
+/*
+Employees section.
+A closer examination of the staff, handy to the client confidence as well as to the other staff members.
+recruitment branding.
+*/
+.employees-section {
+    background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
+    padding: 80px 40px;
+}
+
+.employees-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*
+Employees heading.
+Strengthens the culture of the development agency which is the People-First.
+*/
+.employees-container h2 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--blue-2);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.employees-container h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: var(--blue-3);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*
+Employee card grid layout.
+An elastic reactive design that expands with the agency staffing.
+more staff.
+*/
+.employees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/*
+Employee card styling.
+Unifies the display of personnel members to a unified one.
+company image.
+*/
+.employee-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(13,110,253,0.18);
+}
+
+/*
+Employee image.
+Professional portraits that help to create a face-name association.
+with clients.
+*/
+.employee-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*
+Employee info section.
+Outlines the kind of tech stack each developer is an expert with.
+in (e.g. leadership, UIX ).
+*/
+.employee-info {
+    padding: 20px;
+}
+
+.employee-info h3 {
+    font-size: 20px;
+    color: #1e3a5f;
+}
+
+.employee-info .role {
+    color: #64b5f6;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
