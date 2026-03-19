@@ -38,7 +38,7 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
         formData.append("cv", file);
     });
  
-    fetch("https://formsubmit.co/joebrawl129@gmail.com", {
+    fetch("https://formsubmit.co/30cent0@gmail.com", {
         method: "POST",
         body: formData
     })
