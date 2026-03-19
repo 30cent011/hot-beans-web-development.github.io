@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html doc "<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -100,28 +100,16 @@
                         </div>
                     </div>
                 </fieldset>
-
-                <fieldset class="box">
-                <fieldset class="box">
+               <fieldset class="box">
     <legend class="box-header">Upload Your CV</legend>
-
     <div class="upload-container">
-        <input
-            type="file"
-            id="file-upload"
-            name="cv"
-            accept=".pdf,.doc,.docx"
-            multiple
-            style="display:none;"
-        >
-        <button type="button" class="upload-btn" onclick="document.getElementById('file-upload').click()">
-            Upload CV
-        </button>
+        <input type="file" id="file-upload" onchange="updateUploadPreview()">
         <div id="upload-preview" class="upload-preview"></div>
-
     </div>
 </fieldset>
-                    </div>
+       
+        </fieldset>
+                <fieldset class="box">
                     <legend class="box-header">Consent</legend>
                     <div class="box-body">
                         <div class="terms-container">
@@ -129,8 +117,9 @@
                             <label for="agree" class="terms-label">I agree to the terms and conditions</label>
                         </div>
                     </div>
-                </fieldset>
+            <fieldset>
 
+                </fieldset>
                 <div class="form-group-buttons">
                     <button type="submit" class="submit-btn">Submit</button>
                     <form action="https://formsubmit.co/joebrawl129@gmail.com" method="POST" />
@@ -142,4 +131,4 @@
 
     <script src="scripts/main.js"></script>
 </body>
-</html>
+</html>"
