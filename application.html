@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <img src="assets/images/logo.png" alt="logo" class="logo" width="50" height="50">
+            <img src="assets/images/logo.png" alt="…" class="logo" width="50" height="50">
             <h1 class="logo">Hot Beans Development</h1>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -34,7 +34,10 @@
             <h2>Application Form</h2>
             <p class="form-intro">Complete the form below to apply for a role with us.</p>
 
+            <!-- CHANGED: removed action="#" and method="post" so script.js handles submission -->
             <form class="form-wrapper" enctype="multipart/form-data">
+
+                <!-- formsubmit.co hidden config fields -->
                 <input type="hidden" name="_subject" value="New Job Application - Hot Beans Development">
                 <input type="hidden" name="_captcha" value="false">
 
@@ -107,7 +110,8 @@
                 <fieldset class="box">
                     <legend class="box-header">Upload Your CV</legend>
                     <div class="upload-container">
-                        <input type="file" id="file-upload" name="cv">
+                        <input type="file" id="file-upload" name="cv" style="display:none;">
+                        <button type="button" class="submit-btn" onclick="document.getElementById('file-upload').click()">Choose CV File</button>
                         <div id="upload-preview" class="upload-preview"></div>
                     </div>
                 </fieldset>
@@ -130,6 +134,36 @@
             </form>
         </div>
     </section>
-    <script src="scripts/script.js"></script>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function() {
+            const preview = document.getElementById('upload-preview');
+            if (this.files.length > 0) {
+                preview.textContent = '📎 ' + this.files[0].name;
+            } else {
+                preview.textContent = '';
+            }
+        });
+
+        document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch("https://formsubmit.co/joebrawl129@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(() => {
+                window.open("success.html", "SubmissionPopup", "width=500,height=400");
+                form.reset();
+                document.getElementById('upload-preview').textContent = '';
+            })
+            .catch(() => {
+                alert("Error submitting application.");
+            });
+        });
+    </script>
 </body>
 </html>
