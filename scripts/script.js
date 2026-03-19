@@ -1,15 +1,14 @@
-
 let selectedFiles = [];
-
+ 
 document.getElementById('file-upload').addEventListener('change', function(e) {
     const files = Array.from(e.target.files);
     selectedFiles = [...files];
     updateUploadPreview();
 });
-
+ 
 function updateUploadPreview() {
     const previewArea = document.getElementById('upload-preview');
-
+ 
     previewArea.innerHTML = selectedFiles.map((file, index) => `
         <div class="upload-item">
             <span>${sanitizeHTML(file.name)}</span>
@@ -17,12 +16,12 @@ function updateUploadPreview() {
         </div>
     `).join('');
 }
-
+ 
 function removeFile(index) {
     selectedFiles.splice(index, 1);
     updateUploadPreview();
 }
-
+ 
 function sanitizeHTML(text) {
     let div = document.createElement("div");
     div.textContent = text;
@@ -30,10 +29,13 @@ function sanitizeHTML(text) {
 }
 document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
     e.preventDefault();
-
+ 
     const form = e.target;
     const formData = new FormData(form);
-
+    selectedFiles.forEach((file) => {
+        formData.append("cv", file);
+    });
+ 
     fetch("https://formsubmit.co/joebrawl129@gmail.com", {
         method: "POST",
         body: formData

@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <img src="assets\images\logo.png" alt="…" class="logo" width="50" height="50">
+            <img src="assets/images/logo.png" alt="logo" class="logo" width="50" height="50">
             <h1 class="logo">Hot Beans Development</h1>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -34,7 +34,10 @@
             <h2>Application Form</h2>
             <p class="form-intro">Complete the form below to apply for a role with us.</p>
 
-            <form class="form-wrapper" action="#" method="post" enctype="multipart/form-data">
+            <form class="form-wrapper" enctype="multipart/form-data">
+                <input type="hidden" name="_subject" value="New Job Application - Hot Beans Development">
+                <input type="hidden" name="_captcha" value="false">
+
                 <fieldset class="box">
                     <legend class="box-header">Personal Details</legend>
                     <div class="box-body">
@@ -74,17 +77,17 @@
                                 <option>Front End Developer</option>
                                 <option>Back End Developer</option>
                                 <option>Full Stack Developer</option>
-                               <option>UX/UI Designer</option>
+                                <option>UX/UI Designer</option>
                             </select>
                         </div>
                         <div class="form-group-full">
                             <label>Primary Skill</label>
                             <div class="checkbox-container">
                                 <select id="skill" name="skill">
-                                  <option>html</option>
-                                <option>JavaScript</option>
-                                <option>CSS3</option>
-                               <option>React</option>
+                                    <option>HTML</option>
+                                    <option>JavaScript</option>
+                                    <option>CSS3</option>
+                                    <option>React</option>
                                 </select>
                             </div>
                         </div>
@@ -100,15 +103,15 @@
                         </div>
                     </div>
                 </fieldset>
-               <fieldset class="box">
-    <legend class="box-header">Upload Your CV</legend>
-    <div class="upload-container">
-        <input type="file" id="file-upload" onchange="updateUploadPreview()">
-        <div id="upload-preview" class="upload-preview"></div>
-    </div>
-</fieldset>
-       
-        </fieldset>
+
+                <fieldset class="box">
+                    <legend class="box-header">Upload Your CV</legend>
+                    <div class="upload-container">
+                        <input type="file" id="file-upload" name="cv">
+                        <div id="upload-preview" class="upload-preview"></div>
+                    </div>
+                </fieldset>
+
                 <fieldset class="box">
                     <legend class="box-header">Consent</legend>
                     <div class="box-body">
@@ -117,32 +120,16 @@
                             <label for="agree" class="terms-label">I agree to the terms and conditions</label>
                         </div>
                     </div>
-            <fieldset>
-
                 </fieldset>
-<div class="form-group-buttons">
 
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New Application Submission">
-    <input type="hidden" name="_template" value="table">
-
-    <button type="submit" class="submit-btn">Submit</button>
-    <button type="reset" class="reset-btn">Clear</button>
-</div>
-<script>
-document.querySelector(".form-wrapper").addEventListener("submit", function(e) { e.preventDefault();
-const form = e.target; const formData = new FormData(form);fetch("https://formsubmit.co/joebrawl129@gmail.com", { method: "POST", body: formData })
-    .then(() => {window.open("success.html", "SubmissionPopup", "width=500,height=400"); form.reset(); })
-    .catch(() => { alert("Error submitting application.");
-    });
-});
-</script>
-</div>
+                <div class="form-group-buttons">
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <button type="reset" class="reset-btn">Clear</button>
                 </div>
+
             </form>
         </div>
     </section>
-
-    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
-</html>"
+</html>
