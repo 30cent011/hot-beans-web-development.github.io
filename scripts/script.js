@@ -1,8 +1,9 @@
+
 let selectedFiles = [];
 
 document.getElementById('file-upload').addEventListener('change', function(e) {
     const files = Array.from(e.target.files);
-    selectedFiles = [...selectedFiles, ...files];
+    selectedFiles = [...files];
     updateUploadPreview();
 });
 
@@ -27,3 +28,23 @@ function sanitizeHTML(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("https://formsubmit.co/joebrawl129@gmail.com", {
+        method: "POST",
+        body: formData
+    })
+    .then(() => {
+        window.open("success.html", "SubmissionPopup", "width=500,height=400");
+        form.reset();
+        selectedFiles = [];
+        updateUploadPreview();
+    })
+    .catch(() => {
+        alert("There was an error sending your application.");
+    });
+});
