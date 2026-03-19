@@ -27,11 +27,13 @@ function sanitizeHTML(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+ 
 document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
     e.preventDefault();
  
     const form = e.target;
     const formData = new FormData(form);
+ 
     selectedFiles.forEach((file) => {
         formData.append("cv", file);
     });
