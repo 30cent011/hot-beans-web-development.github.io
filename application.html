@@ -1,4 +1,4 @@
-html doc "<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -120,10 +120,24 @@ html doc "<!DOCTYPE html>
             <fieldset>
 
                 </fieldset>
-                <div class="form-group-buttons">
-                    <button type="submit" class="submit-btn">Submit</button>
-                    <form action="https://formsubmit.co/joebrawl129@gmail.com" method="POST" />
-                    <button type="reset" class="reset-btn">Clear</button>
+<div class="form-group-buttons">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Application Submission">
+    <input type="hidden" name="_template" value="table">
+
+    <button type="submit" class="submit-btn">Submit</button>
+    <button type="reset" class="reset-btn">Clear</button>
+</div>
+<script>
+document.querySelector(".form-wrapper").addEventListener("submit", function(e) { e.preventDefault();
+const form = e.target; const formData = new FormData(form);fetch("https://formsubmit.co/joebrawl129@gmail.com", { method: "POST", body: formData })
+    .then(() => {window.open("success.html", "SubmissionPopup", "width=500,height=400"); form.reset(); })
+    .catch(() => { alert("Error submitting application.");
+    });
+});
+</script>
+</div>
                 </div>
             </form>
         </div>
