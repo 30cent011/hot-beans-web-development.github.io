@@ -89,7 +89,7 @@ body {
     background: transparent;
     border: 2px solid var(--blue-3);
     border-radius: 4px;
-    color: #fff;
+    color: #006eff;
     cursor: pointer;
     transition: 0.3s;
 }
