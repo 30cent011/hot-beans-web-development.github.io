@@ -1,18 +1,14 @@
-/* Main section for the trainees page.
-   The gradient background helps separate this section visually. */
 .employees-section {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     padding: 80px 40px;
     margin: 40px 0;
 }
 
-/* Container that centers the content and limits the width */
 .employees-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Heading for the trainees section with a decorative underline */
 .employees-container h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
@@ -24,7 +20,6 @@
     padding-bottom: 15px;
 }
 
-/* Underline effect placed under the heading */
 .employees-container h2::after {
     content: '';
     position: absolute;
@@ -36,16 +31,12 @@
     background: var(--blue-3);
 }
 
-/* Grid layout for trainee cards.
-   Auto-fit ensures the layout adjusts to different screen sizes. */
 .employees-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* Individual trainee card styling.
-   Rounded corners and shadows help the cards stand out. */
 .employee-card {
     background: white;
     border-radius: 8px;
@@ -54,14 +45,12 @@
     transition: all 0.3s ease;
 }
 
-/* Hover effect to make the cards feel interactive */
 .employee-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(13,110,253,0.18);
 }
 
-/* Placeholder used when trainee images fail to load.
-   This was added because college systems often block external images. */
+/* fallback for when images don't load - college blocks a lot of external urls */
 .employee-image-placeholder {
     width: 150px;
     height: 150px;
@@ -77,13 +66,11 @@
     border-radius: 8px;
 }
 
-/* Camera emoji used to indicate a missing image */
 .employee-image-placeholder::before {
     content: '📷';
     font-size: 64px;
 }
 
-/* Optional class for real trainee images */
 .employee-image {
     width: 150px;
     height: 150px;
@@ -94,12 +81,10 @@
     border-radius: 8px;
 }
 
-/* Container for trainee information */
 .employee-info {
     padding: 25px;
 }
 
-/* Trainee name styling */
 .employee-info h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -108,7 +93,6 @@
     margin: 0 0 8px 0;
 }
 
-/* Trainee role styling */
 .employee-info .role {
     color: #64b5f6;
     font-weight: 600;
@@ -118,11 +102,9 @@
     letter-spacing: 1px;
 }
 
-/* Description text for each trainee */
 .employee-info .description {
     color: #666;
     font-size: 14px;
     line-height: 1.6;
     margin: 0;
 }
-/* most of the css is copied from the style.css file and edited to match the needs of each page to see a further detailed explanation look at style.css file */

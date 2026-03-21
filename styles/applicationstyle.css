@@ -1,5 +1,3 @@
-/* Navigation bar for the application page. 
-   This version uses a darker gradient to match the form theme. */
 .navbar {
     position: sticky;
     top: 0;
@@ -11,7 +9,6 @@
     right: 0;
 }
 
-/* Container keeps navbar content aligned and centered */
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -22,7 +19,6 @@
     height: 70px;
 }
 
-/* Logo styling for branding */
 .logo {
     font-size: 24px;
     font-weight: 700;
@@ -30,7 +26,6 @@
     letter-spacing: -0.5px;
 }
 
-/* Navigation links arranged horizontally */
 .nav-links {
     display: flex;
     list-style: none;
@@ -38,7 +33,6 @@
     align-items: center;
 }
 
-/* Shared styling for nav links and nav buttons */
 .nav-links a,
 .nav-buttons button {
     color: white;
@@ -49,7 +43,6 @@
     position: relative;
 }
 
-/* Underline animation for navigation links */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -65,7 +58,6 @@
     width: 100%;
 }
 
-/* Button layout inside the navbar */
 .nav-buttons {
     display: flex;
     flex-direction: row;
@@ -74,7 +66,6 @@
     flex-wrap: wrap;
 }
 
-/* Transparent buttons with a border that fills on hover */
 .nav-buttons button {
     padding: 10px 20px;
     background-color: transparent;
@@ -93,8 +84,6 @@
     box-shadow: 0 4px 12px rgba(100, 181, 246, 0.4);
 }
 
-/* Background for the application page. 
-   This gradient helps the form stand out visually. */
 body {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -102,7 +91,6 @@ body {
     min-height: 100vh;
 }
 
-/* Hero banner for the application page */
 .hero {
     background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
     background-size: cover;
@@ -119,7 +107,7 @@ body {
     justify-content: center;
 }
 
-/* Overlay improves text contrast on the hero image */
+/* overlay so text isn't washed out */
 .hero::before {
     content: '';
     position: absolute;
@@ -131,7 +119,6 @@ body {
     z-index: 1;
 }
 
-/* Optional background image for the hero */
 .hero-image {
     position: absolute;
     top: 0;
@@ -142,7 +129,6 @@ body {
     z-index: 0;
 }
 
-/* Main hero heading for the application page */
 .hero-content h1,
 .hero-title {
     font-family: 'Trebuchet MS', sans-serif;
@@ -155,7 +141,6 @@ body {
     text-transform: capitalize;
 }
 
-/* Subtitle under the hero heading */
 .hero-subtitle {
     font-size: 18px;
     color: #ffffff;
@@ -164,20 +149,17 @@ body {
     font-weight: 300;
 }
 
-/* Main section that contains the application form */
 .application-section {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     padding: 80px 40px;
     margin: 40px 0;
 }
 
-/* Centers the form and limits its width */
 .application-container {
     max-width: 700px;
     margin: 0 auto;
 }
 
-/* Heading for the application form */
 .application-container h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
@@ -189,7 +171,6 @@ body {
     padding-bottom: 15px;
 }
 
-/* Decorative underline for the form heading */
 .application-container h2::after {
     content: '';
     position: absolute;
@@ -201,7 +182,6 @@ body {
     background: var(--blue-3);
 }
 
-/* Intro text above the form */
 .form-intro {
     text-align: center;
     color: #666;
@@ -210,20 +190,20 @@ body {
     line-height: 1.6;
 }
 
-/* Wrapper for the entire form area */
 .form-wrapper {
     background: white;
     border-radius: 12px;
     padding: 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
+    max-width: 820px;
+    margin: 0 auto;
 }
 
 .form-wrapper:hover {
     box-shadow: 0 8px 24px rgba(13, 110, 253, 0.12);
 }
 
-/* Fieldset used to group related form inputs */
 fieldset.box {
     border: 1px solid #e6eefc;
     background: #ffffff;
@@ -233,7 +213,6 @@ fieldset.box {
     box-shadow: 0 6px 18px rgba(15, 55, 110, 0.04);
 }
 
-/* Header for each fieldset */
 fieldset.box .box-header {
     display: block;
     padding: 12px 18px;
@@ -245,26 +224,22 @@ fieldset.box .box-header {
     font-size: 15px;
 }
 
-/* Body area inside each fieldset */
 fieldset.box .box-body {
     padding: 18px 20px 22px 20px;
 }
 
-/* Special styling for the terms box header */
 fieldset.box.terms-box .box-header {
     background: linear-gradient(90deg, #fff 0%, #f8fbff 100%);
     color: #333;
     font-weight: 600;
 }
 
-/* Removes default legend styling */
 legend.box-header {
     border: none;
     padding: 0;
     margin: 0;
 }
 
-/* Grid layout for form rows */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -272,27 +247,23 @@ legend.box-header {
     margin-bottom: 25px;
 }
 
-/* Ensures form elements stack vertically */
 form,
 .application-form-wrapper {
     display: flex;
     flex-direction: column;
 }
 
-/* Standard form group */
 .form-group {
     display: flex;
     flex-direction: column;
 }
 
-/* Full‑width form group */
 .form-group-full {
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
 }
 
-/* Input fields styled for consistency and usability */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -311,7 +282,6 @@ textarea {
     transition: all 0.3s ease;
 }
 
-/* Dropdown styling */
 select {
     width: 100%;
     padding: 12px 15px;
@@ -322,7 +292,6 @@ select {
     font-size: 14px;
 }
 
-/* Checkbox label alignment */
 .checkbox-container label,
 .checkbox-container > label {
     display: inline-flex;
@@ -333,24 +302,15 @@ select {
     cursor: pointer;
 }
 
-/* Radio button size */
 input[type="radio"] {
     width: 16px;
     height: 16px;
 }
 
-/* Minimum height for textareas */
 textarea {
     min-height: 100px;
 }
 
-/* Centers the form wrapper */
-.form-wrapper {
-    max-width: 820px;
-    margin: 0 auto;
-}
-
-/* Focus styles for inputs */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
@@ -362,7 +322,6 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
 }
 
-/* Label styling */
 label {
     font-weight: 600;
     color: var(--text-dark);
@@ -370,7 +329,6 @@ label {
     margin-bottom: 0;
 }
 
-/* Larger message box for the “about yourself” section */
 #message {
     height: 120px !important;
     width: 100% !important;
@@ -378,7 +336,6 @@ label {
     font-family: 'Inter', sans-serif;
 }
 
-/* Checkbox layout for multiple options */
 .checkbox-container {
     display: flex;
     flex-direction: column;
@@ -386,14 +343,12 @@ label {
     margin-top: 12px;
 }
 
-/* Individual checkbox item */
 .checkbox-item {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Checkbox size and accent color */
 .checkbox-item input[type="checkbox"] {
     width: 18px;
     height: 18px;
@@ -401,7 +356,6 @@ label {
     accent-color: var(--blue-2);
 }
 
-/* Checkbox label styling */
 .checkbox-label {
     font-size: 14px;
     color: #555;
@@ -410,7 +364,6 @@ label {
     font-weight: 500;
 }
 
-/* Terms and conditions container */
 .terms-container {
     display: flex;
     align-items: center;
@@ -421,7 +374,6 @@ label {
     border-left: 3px solid var(--blue-3);
 }
 
-/* Checkbox inside terms section */
 .terms-container input[type="checkbox"] {
     width: 18px;
     height: 18px;
@@ -430,7 +382,6 @@ label {
     flex-shrink: 0;
 }
 
-/* Terms text */
 .terms-label {
     font-size: 13px;
     color: #555;
@@ -439,7 +390,6 @@ label {
     line-height: 1.5;
 }
 
-/* Button layout for submit and reset */
 .form-group-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -447,7 +397,6 @@ label {
     margin-top: 30px;
 }
 
-/* Shared button styling */
 .submit-btn,
 .reset-btn {
     padding: 13px 20px;
@@ -459,7 +408,6 @@ label {
     transition: all 0.3s ease;
 }
 
-/* Submit button with gradient background */
 .submit-btn {
     background: linear-gradient(90deg, var(--blue-1) 0%, var(--blue-2) 100%);
     color: white;
@@ -475,7 +423,6 @@ label {
     transform: translateY(0);
 }
 
-/* Reset button with softer styling */
 .reset-btn {
     background-color: #e8eef5;
     color: var(--text-dark);
@@ -488,7 +435,6 @@ label {
     transform: translateY(-2px);
 }
 
-/* Description section reused from other pages to keep the site consistent */
 .description {
     background-color: #ffffff;
     padding: 80px 40px;
@@ -500,7 +446,6 @@ label {
     margin: 0 auto;
 }
 
-/* Section heading with underline */
 .description h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
@@ -521,7 +466,6 @@ label {
     background: var(--blue-1);
 }
 
-/* Paragraph styling */
 .description p {
     font-size: 16px;
     line-height: 1.8;
@@ -530,7 +474,6 @@ label {
     text-align: justify;
 }
 
-/* Footer for the application page */
 .footer {
     background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
     color: white;
@@ -539,5 +482,3 @@ label {
     margin-top: 60px;
     font-size: 14px;
 }
-/* most of the css is copied from the style.css file and edited to match the needs of each page to see a further detailed explanation look at style.css file */
-

@@ -1,11 +1,10 @@
-/* Resetting default spacing and ensuring consistent box sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Color variables used throughout the site for consistency */
+/* colour vars */
 :root {
     --blue-1: #0a58ca;
     --blue-2: #0d6efd;
@@ -14,12 +13,10 @@
     --text-dark: #05203a;
 }
 
-/* Smooth scrolling makes navigation between sections feel more natural */
 html {
     scroll-behavior: smooth;
 }
 
-/* Base styling for the whole page */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f8f9fa;
@@ -28,7 +25,6 @@ body {
     min-height: 100vh;
 }
 
-/* Sticky navigation bar that stays visible while scrolling */
 .navbar {
     position: sticky;
     top: 0;
@@ -37,7 +33,6 @@ body {
     z-index: 1000;
 }
 
-/* Container keeps navbar content centered and spaced correctly */
 .nav-container {
     max-width: 1400px;
     margin: auto;
@@ -48,21 +43,18 @@ body {
     align-items: center;
 }
 
-/* Logo styling for brand visibility */
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: #fff;
 }
 
-/* Navigation links arranged horizontally */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 35px;
 }
 
-/* Basic link styling with a hover underline animation */
 .nav-links a {
     color: #fff;
     text-decoration: none;
@@ -71,7 +63,7 @@ body {
     transition: 0.3s;
 }
 
-/* Underline animation appears on hover */
+/* underline slide-in on hover */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -87,13 +79,11 @@ body {
     width: 100%;
 }
 
-/* Buttons inside the navbar */
 .nav-buttons {
     display: flex;
     gap: 15px;
 }
 
-/* Transparent buttons with a border that fills on hover */
 .nav-buttons button {
     padding: 10px 20px;
     background: transparent;
@@ -111,7 +101,6 @@ body {
     box-shadow: 0 4px 12px rgba(100,181,246,0.4);
 }
 
-/* Main hero banner with centered text */
 .hero {
     background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
@@ -124,7 +113,7 @@ body {
     align-items: center;
 }
 
-/* Dark overlay improves text contrast on the hero section */
+/* overlay so text is readable */
 .hero::before {
     content: "";
     position: absolute;
@@ -132,27 +121,23 @@ body {
     background: rgba(13,110,253,0.75);
 }
 
-/* Ensures hero text stays above the overlay */
 .hero-content {
     position: relative;
     max-width: 800px;
 }
 
-/* Main hero heading */
 .hero-content h1 {
     font-size: 48px;
     font-weight: bold;
     text-transform: capitalize;
 }
 
-/* Subtitle under the hero heading */
 .hero-subtitle {
     margin-top: 15px;
     font-size: 18px;
     opacity: 0.95;
 }
 
-/* Section for general page descriptions */
 .description {
     background: #fff;
     padding: 80px 40px;
@@ -163,7 +148,6 @@ body {
     margin: auto;
 }
 
-/* Section heading with a colored underline */
 .description h2 {
     font-size: 36px;
     color: var(--blue-2);
@@ -172,14 +156,12 @@ body {
     border-bottom: 4px solid var(--blue-1);
 }
 
-/* Paragraph styling for readable text blocks */
 .description p {
     margin-bottom: 20px;
     text-align: justify;
     color: #555;
 }
 
-/* Opportunities section with a light background */
 .opportunities {
     background: #f0f5fb;
     padding: 80px 40px;
@@ -190,7 +172,6 @@ body {
     margin: auto;
 }
 
-/* Centered heading with decorative underline */
 .opportunities h2 {
     font-size: 36px;
     text-align: center;
@@ -210,14 +191,12 @@ body {
     transform: translateX(-50%);
 }
 
-/* Grid layout for opportunity cards */
 .opportunity-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-/* Individual card styling */
 .opp-card {
     background: #fff;
     padding: 30px;
@@ -236,7 +215,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Call‑to‑action section with centered text */
 .cta-section {
     background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
@@ -244,7 +222,6 @@ body {
     color: #fff;
 }
 
-/* CTA button styled to stand out */
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
@@ -262,7 +239,6 @@ body {
     box-shadow: 0 6px 20px rgba(13,110,253,0.25);
 }
 
-/* Team profiles section */
 .team-profiles {
     background: #fff;
     padding: 80px 40px;
@@ -276,7 +252,7 @@ body {
     gap: 30px;
 }
 
-/* Profile card with left border accent */
+/* left border gives a bit of colour without being too much */
 .profile-card {
     background: #f8f9fa;
     padding: 30px;
@@ -290,7 +266,6 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* Courses section */
 .courses-section {
     background: #fff;
     padding: 80px 40px;
@@ -301,7 +276,6 @@ body {
     margin: auto;
 }
 
-/* Courses heading with underline */
 .courses-container h2 {
     font-size: 28px;
     color: #667eea;
@@ -310,14 +284,12 @@ body {
     margin-bottom: 40px;
 }
 
-/* Grid layout for course cards */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* Course card styling */
 .course-card {
     background: #f8f9fa;
     padding: 25px;
@@ -333,7 +305,6 @@ body {
     box-shadow: 0 8px 20px rgba(102,126,234,0.2);
 }
 
-/* Employees section */
 .employees-section {
     background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
     padding: 80px 40px;
@@ -344,7 +315,6 @@ body {
     margin: auto;
 }
 
-/* Employees heading */
 .employees-container h2 {
     font-size: 36px;
     text-align: center;
@@ -364,14 +334,12 @@ body {
     transform: translateX(-50%);
 }
 
-/* Grid layout for employee cards */
 .employees-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* Employee card styling */
 .employee-card {
     background: #fff;
     border-radius: 8px;
@@ -385,14 +353,12 @@ body {
     box-shadow: 0 8px 20px rgba(13,110,253,0.18);
 }
 
-/* Employee image */
 .employee-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-/* Employee info section */
 .employee-info {
     padding: 20px;
 }
@@ -409,7 +375,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Footer for the application page */
 section.apply-now {
     background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
     color: white;

@@ -1,5 +1,3 @@
-/* Hero section for the application page. 
-   This creates a strong visual header with centered text. */
 .hero {
     background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
     color: white;
@@ -8,40 +6,33 @@
     margin: 0;
 }
 
-/* Centers the hero content and limits its width for readability */
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Main title for the application page */
 .hero-title {
     font-size: 48px;
     font-weight: 700;
     margin: 0 0 15px 0;
 }
 
-/* Subtitle under the main title */
 .hero-subtitle {
     font-size: 20px;
     font-weight: 300;
     margin: 0;
 }
 
-/* Main section that holds the application form */
 .application-section {
     padding: 80px 40px;
     background: #f9fafc;
 }
 
-/* Centers the form and limits its width */
 .application-container {
     max-width: 700px;
     margin: 0 auto;
 }
 
-/*  
-   I used flex direction column earlier to help center the content. */
 .application-container h2 {
     font-size: 32px;
     font-weight: 700;
@@ -50,21 +41,18 @@
     text-align: center;
 }
 
-/* Short introduction text above the form */
 .form-intro {
     text-align: center;
     color: #666;
     margin-bottom: 40px;
 }
 
-/* Wrapper that stacks form sections vertically */
 .form-wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Box container used for grouping form fields */
 .box {
     background: white;
     border: 1px solid #e0e6ed;
@@ -72,8 +60,6 @@
     padding: 0;
 }
 
-/* 
-   Padding added to improve spacing and readability. */
 .box-header {
     display: block;
     padding: 16px 20px;
@@ -84,39 +70,32 @@
     margin: 0;
 }
 
-/* Body area inside each box */
 .box-body {
     padding: 20px;
 }
 
-/* 
-   This helps keep fields aligned and responsive. */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-/* Standard form group layout */
 .form-group,
 .form-group-full {
     display: flex;
     flex-direction: column;
 }
 
-/* Full‑width form group for fields that span both columns */
 .form-group-full {
     grid-column: 1 / -1;
 }
 
-/* Label styling for clarity and consistency */
 label {
     font-weight: 600;
     margin-bottom: 8px;
     color: #333;
 }
 
-/* Input and textarea styling for a clean, modern look */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -132,7 +111,6 @@ textarea {
     font-size: 14px;
 }
 
-/* Focus styles improve accessibility and help users see active fields */
 input:focus,
 select:focus,
 textarea:focus {
@@ -141,14 +119,12 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(45, 90, 140, 0.1);
 }
 
-/* Container for checkbox options */
 .checkbox-container {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-/* Aligns checkbox labels with their inputs */
 .checkbox-container label {
     display: flex;
     align-items: center;
@@ -156,26 +132,22 @@ textarea:focus {
     font-weight: normal;
 }
 
-/* Adds spacing between checkbox and label text */
 .checkbox-container input {
     margin-right: 8px;
 }
 
-/* Terms and conditions layout */
 .terms-container {
     display: flex;
     align-items: flex-start;
     gap: 10px;
 }
 
-/* Label for terms text */
 .terms-label {
     margin: 0;
     font-weight: normal;
     line-height: 1.5;
 }
 
-/* Button group for submit and reset actions */
 .form-group-buttons {
     display: flex;
     gap: 15px;
@@ -183,8 +155,6 @@ textarea:focus {
     justify-content: center;
 }
 
-/* Submit button styling. 
-   Designed to stand out and match the site’s color theme. */
 .submit-btn {
     background: #2d5a8c;
     color: rgb(240, 236, 236);
@@ -200,7 +170,6 @@ textarea:focus {
     background: #1e3a5f;
 }
 
-/* Reset button with a softer appearance */
 .reset-btn {
     background: #e0e6ed;
     color: #333;
@@ -215,7 +184,8 @@ textarea:focus {
 .reset-btn:hover {
     background: #d0d6dd;
 }
-/* Upload Button Styling */
+
+/* upload area */
 .upload-container {
     background-color: #1608d4;
     color: rgb(239, 239, 241);
@@ -234,15 +204,9 @@ textarea:focus {
     background-color: #0a0ddd;
 }
 
-/* Display the selected file name */
 .file-name {
     margin-left: 12px;
     font-size: 0.95rem;
     color: #333;
     font-style: italic;
 }
-/* note:  
-   These styles were adapted from other pages to keep the design consistent. 
-   Some elements intentionally match the rest of the site to meet client requirements. */
-
-   /* most of the css is copied from the style.css file and edited to match the needs of each page to see a further detailed explanation look at style.css file */
