@@ -35,18 +35,6 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
     const submitBtn = form.querySelector('button[type="submit"]');
     const result = document.getElementById('result');
  
-   
-    const fileInput = document.getElementById('file-upload');
-    if (fileInput.files.length > 0) {
-        const fileSizeMB = fileInput.files[0].size / 1024 / 1024;
-        if (fileSizeMB > 10) {
-            result.innerHTML = "File too large. Please upload a CV under 10MB.";
-            result.style.color = "red";
-            result.style.display = "block";
-            return;
-        }
-    }
- 
     const originalText = submitBtn.textContent;
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
@@ -54,7 +42,6 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
  
     const formData = new FormData(form);
  
-
     fetch("https://formsubmit.co/ajax/30cent0@proton.me", {
         method: "POST",
         body: formData
@@ -64,8 +51,6 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
         if (data.success === "true" || data.success === true) {
             window.open("success.html", "SubmissionPopup", "width=500,height=400");
             form.reset();
-            selectedFiles = [];
-            updateUploadPreview();
             result.innerHTML = "Application submitted successfully!";
             result.style.color = "green";
             result.style.display = "block";
@@ -88,3 +73,4 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
         }, 6000);
     });
 });
+ 
