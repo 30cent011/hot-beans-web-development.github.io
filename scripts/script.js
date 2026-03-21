@@ -44,16 +44,16 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
  
     fetch("https://formsubmit.co/ajax/30cent0@proton.me", {
         method: "POST",
-        body: formData
+        body: formData,
+        headers: { 'Accept': 'application/json' }  
     })
     .then(response => response.json())
     .then(data => {
         if (data.success === "true" || data.success === true) {
-            window.open("success.html", "SubmissionPopup", "width=500,height=400");
             form.reset();
-            result.innerHTML = "Application submitted successfully!";
-            result.style.color = "green";
-            result.style.display = "block";
+            selectedFiles = [];
+            updateUploadPreview();
+            window.location.href = "success.html"; 
         } else {
             result.innerHTML = "Submission failed: " + (data.message || "Please try again.");
             result.style.color = "red";
@@ -73,4 +73,5 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
         }, 6000);
     });
 });
+ 
  
