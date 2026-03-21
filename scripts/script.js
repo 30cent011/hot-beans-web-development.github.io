@@ -27,17 +27,17 @@ function sanitizeHTML(text) {
     div.textContent = text;
     return div.innerHTML;
 }
-
-const form = document.querySelector('.form-wrapper');
+const form = document.getElementById('form');
 const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
-    formData.append("access_key","3b1b7519-e6d0-4211-b899-64097a6f0ab0");
+    formData.append("access_key", "3b1b7519-e6d0-4211-b899-64097a6f0ab0");
 
     const originalText = submitBtn.textContent;
+
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
 
@@ -50,10 +50,8 @@ form.addEventListener('submit', async (e) => {
         const data = await response.json();
 
         if (response.ok) {
-            window.open("success.html", "SubmissionPopup", "width=500,height=400");
+            alert("Success! Your message has been sent.");
             form.reset();
-            selectedFiles = [];
-            updateUploadPreview();
         } else {
             alert("Error: " + data.message);
         }
