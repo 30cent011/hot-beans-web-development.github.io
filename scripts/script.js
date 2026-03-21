@@ -1,31 +1,51 @@
 let selectedFiles = [];
- 
-document.getElementById('file-upload').addEventListener('change', function() {
-    const preview = document.getElementById('upload-preview');
-    if (this.files.length > 0) {
-        preview.textContent = '📎 ' + this.files[0].name;
-    } else {
-        preview.textContent = '';
-    }
+
+document.getElementById('file-upload').addEventListener('change', function(e) {
+    const files = Array.from(e.target.files);
+    selectedFiles = [...files];
+    updateUploadPreview();
 });
- 
+
+function updateUploadPreview() {
+    const previewArea = document.getElementById('upload-preview');
+
+    previewArea.innerHTML = selectedFiles.map((file, index) => `
+        <div class="upload-item">
+            <span>${sanitizeHTML(file.name)}</span>
+            <button class="remove-file" onclick="removeFile(${index})">✖</button>
+        </div>
+    `).join('');
+}
+
+function removeFile(index) {
+    selectedFiles.splice(index, 1);
+    updateUploadPreview();
+}
+
+function sanitizeHTML(text) {
+    let div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+}
+
 document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
     e.preventDefault();
- 
+
     const form = e.target;
     const formData = new FormData(form);
- 
-    fetch("https://formsubmit.co/joebrawl129@gmail.com", {
+
+    fetch("https://formsubmit.co/30cent0@proton.me", {
         method: "POST",
         body: formData
     })
     .then(() => {
         window.open("success.html", "SubmissionPopup", "width=500,height=400");
         form.reset();
-        document.getElementById('upload-preview').textContent = '';
+        selectedFiles = [];
+        updateUploadPreview();
     })
     .catch(() => {
-        alert("Error submitting application.");
+        alert("There was an error sending your application.");
     });
 });
  
