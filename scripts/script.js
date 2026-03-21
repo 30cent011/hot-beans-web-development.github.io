@@ -1,6 +1,6 @@
 let selectedFiles = [];
  
-// File upload preview
+
 document.getElementById('file-upload').addEventListener('change', function(e) {
     const files = Array.from(e.target.files);
     selectedFiles = [...files];
@@ -12,6 +12,7 @@ function updateUploadPreview() {
     previewArea.innerHTML = selectedFiles.map((file, index) => `
         <div class="upload-item">
             <span>${sanitizeHTML(file.name)}</span>
+            <span class="file-size">(${(file.size / 1024).toFixed(1)} KB)</span>
             <button class="remove-file" onclick="removeFile(${index})">✖</button>
         </div>
     `).join('');
@@ -29,22 +30,13 @@ function sanitizeHTML(text) {
 }
  
 
-async function uploadCV(file) {
-    const formData = new FormData();
-    formData.append("file", file);
- 
-    const response = await fetch("https://file.io/?expires=7d", {
-        method: "POST",
-        body: formData
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(new Error("Failed to read file"));
+        reader.readAsDataURL(file);
     });
- 
-    const data = await response.json();
- 
-    if (data.success) {
-        return data.link; 
-    } else {
-        throw new Error("CV upload failed: " + data.message);
-    }
 }
  
 
@@ -57,35 +49,56 @@ form.addEventListener('submit', async function(e) {
  
     const fileInput = document.getElementById('file-upload');
     const originalText = submitBtn.textContent;
+ 
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
     result.style.display = "none";
  
     try {
-        const formData = new FormData(form);
- 
-        if (fileInput.files.length > 0) {
-            const file = fileInput.files[0];
+
+        const jsonData = {
+            access_key: "3b1b7519-e6d0-4211-b899-64097a6f0ab0",
+            subject: "New Job Application - Hot Beans Development",
+            first_name: form.querySelector('[name="first_name"]').value,
+            last_name: form.querySelector('[name="last_name"]').value,
+            email: form.querySelector('[name="email"]').value,
+            phone: form.querySelector('[name="phone"]').value,
+            job: form.querySelector('[name="job"]').value,
+            skill: form.querySelector('[name="skill"]').value,
+            message: form.querySelector('[name="message"]').value,
+        };
  
 
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
             const fileSizeMB = file.size / 1024 / 1024;
-            if (fileSizeMB > 100) {
-                throw new Error("File too large. Please upload a CV under 100MB.");
+ 
+
+            if (fileSizeMB > 5) {
+                throw new Error("CV file is too large. Please upload a file under 5MB.");
             }
  
-            submitBtn.textContent = "Uploading CV...";
-            const cvLink = await uploadCV(file);
+            submitBtn.textContent = "Processing CV...";
+            const base64 = await fileToBase64(file);
  
-        
-            formData.delete("cv");
-            formData.append("cv_download_link", cvLink);
+
+            jsonData.cv_filename = file.name;
+            jsonData.cv_file_size = (fileSizeMB).toFixed(2) + " MB";
+            jsonData.cv_data = base64; 
+        } else {
+            jsonData.cv_filename = "No CV uploaded";
         }
  
-   
         submitBtn.textContent = "Sending...";
+ 
+
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            body: formData
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(jsonData)
         });
  
         const data = await response.json();
@@ -114,4 +127,3 @@ form.addEventListener('submit', async function(e) {
         }, 6000);
     }
 });
- 
