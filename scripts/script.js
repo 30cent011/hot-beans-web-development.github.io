@@ -1,14 +1,14 @@
 let selectedFiles = [];
- 
+
 document.getElementById('file-upload').addEventListener('change', function(e) {
     const files = Array.from(e.target.files);
     selectedFiles = [...files];
     updateUploadPreview();
 });
- 
+
 function updateUploadPreview() {
     const previewArea = document.getElementById('upload-preview');
- 
+
     previewArea.innerHTML = selectedFiles.map((file, index) => `
         <div class="upload-item">
             <span>${sanitizeHTML(file.name)}</span>
@@ -16,19 +16,19 @@ function updateUploadPreview() {
         </div>
     `).join('');
 }
- 
+
 function removeFile(index) {
     selectedFiles.splice(index, 1);
     updateUploadPreview();
 }
- 
+
 function sanitizeHTML(text) {
     let div = document.createElement("div");
     div.textContent = text;
     return div.innerHTML;
 }
- 
-const form = document.getElementById('form');
+
+const form = document.querySelector('.form-wrapper');
 const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
@@ -38,7 +38,6 @@ form.addEventListener('submit', async (e) => {
     formData.append("access_key", "3b1b7519-e6d0-4211-b899-64097a6f0ab0");
 
     const originalText = submitBtn.textContent;
-
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
 
@@ -51,8 +50,10 @@ form.addEventListener('submit', async (e) => {
         const data = await response.json();
 
         if (response.ok) {
-            alert("Success! Your message has been sent.");
+            window.open("success.html", "SubmissionPopup", "width=500,height=400");
             form.reset();
+            selectedFiles = [];
+            updateUploadPreview();
         } else {
             alert("Error: " + data.message);
         }
