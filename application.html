@@ -106,10 +106,13 @@
                 </fieldset>
  
                 <fieldset class="box">
-                    <legend class="box-header">Upload Your CV</legend>
-                    <div class="upload-container">
-                        <input type="file" id="file-upload" name="cv">
-                        <div id="upload-preview" class="upload-preview"></div>
+                    <legend class="box-header">CV Link</legend>
+                    <div class="box-body">
+                        <div class="form-group-full">
+                            <label for="cv_link">Link to your CV</label>
+                            <input type="url" id="cv_link" name="cv_link" placeholder="e.g. https://drive.google.com/your-cv">
+                            <small>Upload your CV to Google Drive, Dropbox or OneDrive and paste the link here.</small>
+                        </div>
                     </div>
                 </fieldset>
  
@@ -132,7 +135,8 @@
         </div>
     </section>
  
-
+ 
     <script src="scripts/script.js"></script>
 </body>
 </html>
+ 
