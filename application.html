@@ -33,7 +33,17 @@
         <div class="application-container">
             <h2>Application Form</h2>
             <p class="form-intro">Complete the form below to apply for a role with us.</p>
-              
+ 
+       
+            <form class="form-wrapper" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+ 
+                <input type="hidden" name="access_key" value="3b1b7519-e6d0-4211-b899-64097a6f0ab0">
+ 
+       
+                <input type="hidden" name="subject" value="New Job Application - Hot Beans Development">
+ 
+             
+                <input type="checkbox" name="botcheck" style="display: none;">
  
                 <fieldset class="box">
                     <legend class="box-header">Personal Details</legend>
@@ -56,6 +66,7 @@
                     <div class="box-body">
                         <div class="form-group-full">
                             <label for="email">Email</label>
+                            
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group-full">
@@ -99,10 +110,12 @@
                     </div>
                 </fieldset>
  
+            
                 <fieldset class="box">
                     <legend class="box-header">Upload Your CV</legend>
                     <div class="upload-container">
                         <input type="file" id="file-upload" name="cv">
+                        <small>Max file size: 5MB</small>
                         <div id="upload-preview" class="upload-preview"></div>
                     </div>
                 </fieldset>
@@ -117,6 +130,9 @@
                     </div>
                 </fieldset>
  
+                
+                <div id="result" style="display:none; margin-bottom: 10px; font-weight: bold;"></div>
+ 
                 <div class="form-group-buttons">
                     <button type="submit" class="submit-btn">Submit</button>
                     <button type="reset" class="reset-btn">Clear</button>
@@ -126,10 +142,9 @@
         </div>
     </section>
  
-
     <script src="scripts/script.js"></script>
 </body>
 </html>
-
+ 
 
  
