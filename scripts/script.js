@@ -1,14 +1,14 @@
 let selectedFiles = [];
-
+ 
 document.getElementById('file-upload').addEventListener('change', function(e) {
     const files = Array.from(e.target.files);
     selectedFiles = [...files];
     updateUploadPreview();
 });
-
+ 
 function updateUploadPreview() {
     const previewArea = document.getElementById('upload-preview');
-
+ 
     previewArea.innerHTML = selectedFiles.map((file, index) => `
         <div class="upload-item">
             <span>${sanitizeHTML(file.name)}</span>
@@ -16,25 +16,26 @@ function updateUploadPreview() {
         </div>
     `).join('');
 }
-
+ 
 function removeFile(index) {
     selectedFiles.splice(index, 1);
     updateUploadPreview();
 }
-
+ 
 function sanitizeHTML(text) {
     let div = document.createElement("div");
     div.textContent = text;
     return div.innerHTML;
 }
-
+ 
 document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
     e.preventDefault();
-
+ 
     const form = e.target;
     const formData = new FormData(form);
-
-    fetch("https://formsubmit.co/30cent0@proton.me", {
+    formData.append("access_key", "1197ff3c-e2af-43ae-8b9c-175c57ca6dd7");
+ 
+    fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
     })
