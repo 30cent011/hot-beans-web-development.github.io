@@ -33,7 +33,7 @@ document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
  
     const form = e.target;
     const formData = new FormData(form);
-    formData.append("access_key", "1197ff3c-e2af-43ae-8b9c-175c57ca6dd7");
+    formData.append("access_key", "3b1b7519-e6d0-4211-b899-64097a6f0ab0");
  
     fetch("https://api.web3forms.com/submit", {
         method: "POST",
