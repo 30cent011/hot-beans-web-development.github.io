@@ -28,25 +28,39 @@ function sanitizeHTML(text) {
     return div.innerHTML;
 }
  
-document.querySelector(".form-wrapper").addEventListener("submit", function(e) {
+const form = document.getElementById('form');
+const submitBtn = form.querySelector('button[type="submit"]');
+
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
- 
-    const form = e.target;
+
     const formData = new FormData(form);
     formData.append("access_key", "3b1b7519-e6d0-4211-b899-64097a6f0ab0");
- 
-    fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-    })
-    .then(() => {
-        window.open("success.html", "SubmissionPopup", "width=500,height=400");
-        form.reset();
-        selectedFiles = [];
-        updateUploadPreview();
-    })
-    .catch(() => {
-        alert("There was an error sending your application.");
-    });
+
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
 });
- 
