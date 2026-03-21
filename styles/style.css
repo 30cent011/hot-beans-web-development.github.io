@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+:root {
+    --blue-1: #0a58ca;
+    --blue-2: #0d6efd;
+    --blue-3: #64b5f6;
+    --blue-4: #e9f5ff;
+    --text-dark: #05203a;
+}
+
 html {
     scroll-behavior: smooth;
 }
