@@ -24,7 +24,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
 }
-
+/* change the colour of the links*/
 .navbar {
     position: sticky;
     top: 0;
@@ -100,7 +100,8 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(100,181,246,0.4);
 }
-
+/* try make the text bigger*/
+/*this is for the text in the index page*/
 .hero {
     background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
@@ -165,7 +166,7 @@ body {
     text-align: justify;
     color: #555;
 }
-
+/*oportunities below the apply now button*/
 .opportunities {
     background: #f0f5fb;
     padding: 80px 40px;
@@ -218,7 +219,7 @@ body {
     color: #667eea;
     margin-bottom: 15px;
 }
-
+/*application button*/
 .cta-section {
     background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
@@ -244,33 +245,7 @@ body {
     box-shadow: 0 6px 20px rgba(13,110,253,0.25);
 }
 
-.team-profiles {
-    background: #fff;
-    padding: 80px 40px;
-}
-
-.profiles-container {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-/* left border gives a bit of colour without being too much */
-.profile-card {
-    background: #f8f9fa;
-    padding: 30px;
-    border-left: 4px solid #667eea;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: 0.3s;
-}
-
-.profile-card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
+/*courses page*/
 .courses-section {
     background: #fff;
     padding: 80px 40px;
@@ -309,7 +284,7 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(102,126,234,0.2);
 }
-
+/*employees*/
 .employees-section {
     background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
     padding: 80px 40px;
@@ -379,7 +354,7 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
 }
-
+/*apply now button*/
 section.apply-now {
     color: white;
     text-align: center;
