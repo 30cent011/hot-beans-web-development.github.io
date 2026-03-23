@@ -136,7 +136,12 @@ body {
     font-size: 18px;
     opacity: 0.95;
 }
-
+.hero :xr-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13,110,253,0.75);
+    z-index: 1;
+}
 .description {
     background: #fff;
     padding: 80px 40px;
