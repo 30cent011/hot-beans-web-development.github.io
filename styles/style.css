@@ -1,9 +1,9 @@
+/*colours for all parts*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 :root {
     --blue-1: #0a58ca;
@@ -13,6 +13,7 @@
     --text-dark: #05203a;
 }
 
+/*smooth feel*/
 html {
     scroll-behavior: smooth;
 }
@@ -24,6 +25,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
 }
+
 /* change the colour of the links*/
 .navbar {
     position: sticky;
@@ -46,7 +48,7 @@ body {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #15139c;
+    color: #ffffff; 
 }
 
 .nav-links {
@@ -56,13 +58,12 @@ body {
 }
 
 .nav-links a {
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     position: relative;
     transition: 0.3s;
 }
-
 
 .nav-links a::after {
     content: "";
@@ -79,29 +80,7 @@ body {
     width: 100%;
 }
 
-.nav-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.nav-buttons button {
-    padding: 10px 20px;
-    background: transparent;
-    border: 2px solid var(--blue-3);
-    border-radius: 4px;
-    color: #006eff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.nav-buttons button:hover {
-    background: var(--blue-3);
-    color: var(--text-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(100,181,246,0.4);
-}
 /* try make the text bigger*/
-/*this is for the text in the index page*/
 .hero {
     background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
@@ -118,12 +97,14 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(13,110,253,0.75);
+    background: rgba(13,110,253,0.5); 
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     max-width: 900px;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -137,12 +118,7 @@ body {
     font-size: 18px;
     opacity: 0.95;
 }
-.hero :xr-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(13,110,253,0.75);
-    z-index: 1;
-}
+
 .description {
     background: #fff;
     padding: 80px 40px;
@@ -166,6 +142,7 @@ body {
     text-align: justify;
     color: #555;
 }
+
 /*oportunities below the apply now button*/
 .opportunities {
     background: #f0f5fb;
@@ -219,14 +196,8 @@ body {
     color: #667eea;
     margin-bottom: 15px;
 }
-/*application button*/
-.cta-section {
-    background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
-    padding: 80px 40px;
-    text-align: center;
-    color: #fff;
-}
 
+/*application button*/
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
@@ -240,9 +211,8 @@ body {
 }
 
 .cta-button:hover {
-    background: #9ecbff;
+    background: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(13,110,253,0.25);
 }
 
 /*courses page*/
@@ -254,14 +224,6 @@ body {
 .courses-container {
     max-width: 1100px;
     margin: auto;
-}
-
-.courses-container h2 {
-    font-size: 28px;
-    color: #667eea;
-    border-bottom: 2px solid #0860e4;
-    padding-bottom: 15px;
-    margin-bottom: 40px;
 }
 
 .courses-grid {
@@ -280,10 +242,6 @@ body {
     transition: 0.3s;
 }
 
-.course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(102,126,234,0.2);
-}
 /*employees*/
 .employees-section {
     background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
@@ -293,25 +251,6 @@ body {
 .employees-container {
     max-width: 1200px;
     margin: auto;
-}
-
-.employees-container h2 {
-    font-size: 36px;
-    text-align: center;
-    color: var(--blue-2);
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.employees-container h2::after {
-    content: "";
-    width: 60px;
-    height: 4px;
-    background: var(--blue-3);
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .employees-grid {
@@ -328,11 +267,6 @@ body {
     transition: 0.3s;
 }
 
-.employee-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(13,110,253,0.18);
-}
-
 .employee-image {
     width: 100%;
     height: 200px;
@@ -343,30 +277,11 @@ body {
     padding: 20px;
 }
 
-.employee-info h3 {
-    font-size: 20px;
-    color: #1e3a5f;
-}
-
-.employee-info .role {
-    color: #64b5f6;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
 /*apply now button*/
 section.apply-now {
+    background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
     color: white;
     text-align: center;
     padding: 30px 40px;
-    margin-top: 60px;    font-size: 14px;
-}
-
-section.apply-now {
-    background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 30px 40px;
     margin-top: 60px;
-    font-size: 14px;
 }
