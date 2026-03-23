@@ -113,7 +113,6 @@ body {
     align-items: center;
 }
 
-/* overlay so text is readable */
 .hero::before {
     content: "";
     position: absolute;
@@ -123,7 +122,7 @@ body {
 
 .hero-content {
     position: relative;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .hero-content h1 {
@@ -231,6 +230,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
+    margin: 30px 0;
 }
 
 .cta-button:hover {
@@ -376,17 +376,15 @@ body {
 }
 
 section.apply-now {
-    background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
     color: white;
     text-align: center;
     padding: 30px 40px;
-    margin-top: 60px;
-    font-size: 14px;
+    margin-top: 60px;    font-size: 14px;
 }
 
 section.apply-now {
     background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
-    color: rgb(6, 40, 236);
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 30px 40px;
     margin-top: 60px;
