@@ -249,3 +249,10 @@ section.apply-now {
     padding: 30px 40px;
     margin-top: 60px;
 }
+
+.hero :xr-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13,110,253,0.75);
+    z-index: 1;
+}
